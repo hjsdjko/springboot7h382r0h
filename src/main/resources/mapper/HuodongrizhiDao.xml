@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.HuodongrizhiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.HuodongrizhiEntity" id="huodongrizhiMap">
+        <result property="huodongbianhao" column="huodongbianhao"/>
+        <result property="huodongmingcheng" column="huodongmingcheng"/>
+        <result property="huodongtupian" column="huodongtupian"/>
+        <result property="huodongjingli" column="huodongjingli"/>
+        <result property="huodongdidian" column="huodongdidian"/>
+        <result property="jilushijian" column="jilushijian"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="lianxifangshi" column="lianxifangshi"/>
+        <result property="jiazhangzhanghao" column="jiazhangzhanghao"/>
+        <result property="jiazhangxingming" column="jiazhangxingming"/>
+        <result property="xueshengxingming" column="xueshengxingming"/>
+        <result property="xueshengxingbie" column="xueshengxingbie"/>
+        <result property="nianling" column="nianling"/>
+        <result property="nianji" column="nianji"/>
+        <result property="shouji" column="shouji"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.HuodongrizhiVO" >
+		SELECT * FROM huodongrizhi  huodongrizhi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.HuodongrizhiVO" >
+		SELECT  huodongrizhi.* FROM huodongrizhi  huodongrizhi 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.HuodongrizhiView" >
+
+		SELECT  huodongrizhi.* FROM huodongrizhi  huodongrizhi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.HuodongrizhiView" >
+		SELECT * FROM huodongrizhi  huodongrizhi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
